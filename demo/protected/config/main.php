@@ -72,7 +72,7 @@ return array(
 
 		// uncomment the following to use a MySQL database
 		'db'=>array(
-			'connectionString' => 'mysql:host=localhost;dbname=demo',
+			'connectionString' => 'mysql:host=localhost;dbname=phpcms',
 			'emulatePrepare' => true,
 			'username' => 'root',
 			'password' => '1',
