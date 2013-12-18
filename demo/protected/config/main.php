@@ -121,5 +121,6 @@ return array(
 	'params'=>array(
 		// this is used in contact page
 		'adminEmail'=>'yutiedun@126.com',
+		'approot'=>'/demo/'
 	),
 );
