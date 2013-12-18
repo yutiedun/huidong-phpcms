@@ -3,15 +3,36 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>{$sitename}</title>
-<link href="/css/index.css" type="text/css" rel="stylesheet" />
+{literal}
+<style type="text/css">
+.category ul{list-style:none;}
+.category ul li{list-style:none; padding:20px; float:left;}
+</style>
+{/literal}
+<script language="javascript" src="{$approot}js/jquery-1.8.2.min.js"></script>
 </head>
 
 <body>
-<h2>站点建设中，请稍候访问。。。</h2>
-{if $user neq ""}{$user->username}
-{if $user->isadmin==1}&nbsp;<a href="/admin/article/index.html">管理员后台</a>{/if}
-&nbsp;<a href="/user/login/logout.html">退出</a>
-{/if}
-{$time}
+<div class="category">
+<ul>
+{foreach from=$categories item="category"}
+<li><a href="{$category->url}" target="_self">{$category->catname}</a></li>
+{/foreach}
+</ul>
+</div>
+{literal}
+<script language="javascript">
+$(document).ready(function(e) {
+    $(".category").find("a").each(function(index, element) {
+		$(this).mouseover(function(e) {
+			$(this).css({"color":"#f00", "background":"#00f"});
+		});
+		$(this).mouseout(function(e) {
+			$(this).css({"color":"#000", "background":"#fff"});
+		});
+	});
+});
+</script>
+{/literal}
 </body>
 </html>
